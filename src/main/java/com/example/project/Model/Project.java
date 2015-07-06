@@ -36,15 +36,14 @@ public final class Project {
 	@ManyToMany
 	private Set<Specialty> specialties = new HashSet<>();
 
-	@JsonIgnore
 	@OneToMany(mappedBy = "project")
 	private Set<Review> reviews = new HashSet<>();
 
-	public Project(String description) {
-		this.description = description;
+	public Project() {
 	}
 
-	public Project() {
+	public Project(String description) {
+		this.description = description;
 	}
 
 	public Long getId() {

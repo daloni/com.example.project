@@ -25,6 +25,9 @@ public class Specialty {
 	@ManyToMany(mappedBy = "specialties")
 	private Set<Project> projects = new HashSet<>();
 
+	@OneToMany
+    private Set<Review> reviews = new HashSet<>();
+
 	public Specialty() {
 	}
 
@@ -64,7 +67,15 @@ public class Specialty {
 		this.projects = projects;
 	}
 
-	@Override
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    @Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;

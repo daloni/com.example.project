@@ -22,12 +22,13 @@ public class Developer extends Employee {
 	@ManyToMany
 	private Set<Specialty> specialties = new HashSet<>();
 
+	@OneToMany(mappedBy = "developer")
+	private Set<Review> reviews = new HashSet<>();
+
 	public Developer(String name, String idCard, EmployeeStatus employeeStatus,Category category) {
 		super(name, idCard, employeeStatus);
 		this.category = category;
 	}
-
-
 
 	public Developer() {
 	}
