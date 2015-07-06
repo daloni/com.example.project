@@ -27,8 +27,9 @@ public class Developer extends Employee {
 		this.category = category;
 	}
 
-	public Developer() {
 
+
+	public Developer() {
 	}
 
 	public Category getCategory() {
